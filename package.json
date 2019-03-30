@@ -1,0 +1,31 @@
+{
+  "name": "GET-NEWS-NOW-",
+  "version": "1.0.0",
+  "description": "News Scraper App with comments enabled",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aurorapwilson/GET-NEWS-NOW-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aurorapwilson/GET-NEWS-NOW-/issues"
+  },
+  "homepage": "https://github.com/Aurorapwilson/GET-NEWS-NOW-#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "mongodb": "^3.2.2",
+    "mongoose": "^5.4.20",
+    "morgan": "^1.9.1",
+    "node": "^11.12.0",
+    "yarn": "^1.15.2"
+  }
+}
