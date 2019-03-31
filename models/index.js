@@ -1,5 +1,5 @@
 //export object that contains listing, index, and note model
 module.exports = {
-    Listing: require("./Listing"),
+    Article: require("./Article"),
     Note: require("./Note")
 };
