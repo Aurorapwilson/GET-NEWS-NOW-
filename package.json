@@ -1,5 +1,5 @@
 {
-  "name": "GET-NEWS-NOW-",
+  "name": "getnewsnow",
   "version": "1.0.0",
   "description": "News Scraper App with comments enabled",
   "main": "index.js",

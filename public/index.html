@@ -1,12 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Mongoose Scraper</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+<style>
+        body {
+            background-color: rgba(0, 0, 0, 0.1);
+            background-image: url("https://images.pexels.com/photos/276092/pexels-photo-276092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            height: 100%;
+            width: 100%;
+        }
+        #wrapper{
+            display: flex;
+        }
+        #articles {
+            height: 35%;
+            width: 35%;
+            
+
+        }
+        #notes{
+            height: 35%;
+            width: 35%;
+        }
+        
+    </style>
+
 <body>
     
+    <div align="center" id="wrapper" class=".col-12 .col-sm-6 .col-md-8">
+        <h1>Get News Now!</h1>
+        
+        <input class=".col-12 .col-sm-6 .col-md-8" type="text">
+        <div id="articles" class=".col-12 .col-sm-6 .col-md-8"></div>
+        <div id="notes" class=".col-12 .col-sm-6 .col-md-8"></div>
+    </div>
+    
+
 </body>
+
 </html>
