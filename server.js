@@ -11,8 +11,18 @@ const cheerio = require("cheerio");
 const db = require("./models");
 //express server
 const app = express();
+
+
+// fkill promise that resolces when the process is killed
+const fkill = require('fkill');
+(async () => {
+    await fkill(":8080");
+    console.log("Killed process");
+});
+
+fkill(":8080");
 //local server port
-let PORT =process.env.PORT || 8000;
+let PORT =process.env.PORT || 8080;
 
 
 
@@ -74,6 +84,7 @@ app.get("/scrape", function(req,res){
         res.json(error);
         });
     });
+
 
     
     

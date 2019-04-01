@@ -6,3 +6,9 @@ $.getJSON("/articles", function(data) {
       $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
     }
   });   
+
+  //Now we create an ajax call to retrieve the Article
+  $.ajax({
+    method: "GET",
+    url: "/articles/" + _id
+  })
