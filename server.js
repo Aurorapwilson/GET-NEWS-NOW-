@@ -47,21 +47,26 @@ app.get("/scrape", function(req,res){
     axios.get("https://m.huffpost.com/us/section/world-news").then(function(response) {
     //load our URL request into server query selector
     let $ = cheerio.load(response.data);
-
+    // console.log("Res!", JSON.stringify(response.data));
     //Now to grab our article titles displayed within the h2 tags
-    $("div h2 ").each(function(i, element){
+    // res.send(response.data);
+    $(".card__headline").each(function(i, element){
+        // console.log($(this));
         //result variable for later
         let result = {};
 // append text to every results' title and link
-        result.title = $(this)
-        .children("a")
-        .text();
-        result.link = $(this)
-        .children("a")
+        let cardLink = $(this)
+        .children("a");
+        console.log("CARDLINK", cardLink);
+        result.link = cardLink
         .attr("href");
 
+        result.title = cardLink
+        .children(".card__headline__text")
+        .text().replace("\n", "");
+
         //New Article from result object to be added to database
-        db.Artible.create(result)
+        db.Article.create(result)
         .then(function(dbArticle){
             console.log(dbArticle);
         }).catch(function(err) {
@@ -71,9 +76,11 @@ app.get("/scrape", function(req,res){
 
     //lets client know when scrape is complete
     res.send("Scrape Complete");
-        });
+        }).catch(function (error) {
+            // handle error
+            console.log(error);
+          })
     });
-
     //Route for getting all Articles from the db
     app.get("/articles", function(req, res){
         //we want to find all articles in our collection
